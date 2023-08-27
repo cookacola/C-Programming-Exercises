@@ -1,6 +1,9 @@
 #include <stdio.h>
 
 #define MK_COLOR(r,g,b) ((b << 16) | (g << 8) | r)
+#define GET_RED(color) (color << 16 >> 16)
+#define GET_GREEN(color) (8 << color >> 8)
+#define GET_BLUE(color) (color >> 16)
 
 /*
 * The OR operator combines all the bits together
