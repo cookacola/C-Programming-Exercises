@@ -3,7 +3,7 @@
 
 #define KEY '&'
 
-main() {
+int main() {
     int orig_char, new_char;
 
     while((orig_char = getchar()) != EOF) {
@@ -15,5 +15,6 @@ main() {
         } else
             putchar(new_char);
     }
+
     return 0;
 }
