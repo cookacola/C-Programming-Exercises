@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    /* Check to see if the correct amount of arguments were entered */
-    if(argc != 2) {
-        printf("Incorrect number of arguments entered");
+    /* Check to see if arguments were entered on the command line */
+    if(argc < 2) {
+        printf("No arguments on the command line");
         return 2;
     }
 
@@ -14,13 +14,16 @@ int main(int argc, char *argv[]) {
     * Store the first argument's pointer in fp
     * Check the pointer to see if it can be read
     */
-    if((fp = fopen(argv[1], "r")) == NULL) {
-        printf("%s cannot be read", argv[1]);
-        return 1;
+    for (int i = 1; i < argc; ++i) {
+        if ((fp = fopen(argv[i], "r")) == NULL)
+        {
+            printf("%s cannot be read", argv[i]);
+            return 1;
+        }
     }
 
     /* Print the message and close the file*/
-    printf("File can be read");
+    printf("All files can be read");
     fclose(fp);
     return 0;
 }
