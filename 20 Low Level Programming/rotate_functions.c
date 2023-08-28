@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+/*
+* Ascertain bit size by multiplying byte size by 8 (eight bits per byte)
+* Determine which bits are shifted off and save them
+* Shift the int
+* Add the shifted off bits back on
+*/
+
 unsigned int rotate_left(unsigned int i, int n) {
     unsigned int bit_size = sizeof(i) * 8;
     unsigned int shifted_off = i >> (bit_size - n);
